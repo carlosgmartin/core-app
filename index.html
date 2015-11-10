@@ -17,7 +17,7 @@
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">CORE</a>
-          <button type="button" id="menu-toggle" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button id="menu-toggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -47,11 +47,20 @@
         </div>
       </div>
     </div>
+    
+    <div id="sidebar" style="position: fixed; display: inline-block; top: 0px; height: 100%; width: 200px; left: -200px; background-color: black; transition: all 0.5s ease-in-out;">
+    
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
       $("#menu-toggle").click(function(e) {
         e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+    <script>
+      document.getElementById("menu-toggle").addEventListener("touchstart", function() {
+        alert("Button pressed");
         $("#wrapper").toggleClass("toggled");
       });
     </script>
